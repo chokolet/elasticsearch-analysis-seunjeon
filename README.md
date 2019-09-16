@@ -157,8 +157,7 @@ Result:
 ## Built With
 
 - Maven 
-- Java 1.8 이상
-- Lombok
+- Java 11 이상
 - elastic search 7.3.1
 
 
