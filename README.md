@@ -149,4 +149,21 @@ Result:
 
 
 - Use analyzer : https://github.com/chokolet/kor-nlp-lib/tree/no-nori
-- see more [plugin_note.md](./plugin_note)
+- see more [plugin_note.md](./plugin_note.md)
+
+
+
+
+## Built With
+
+- Maven 
+- Java 1.8 이상
+- Lombok
+- elastic search 7.3.1
+
+
+
+
+## Authors
+
+chickin7@gmail.com
