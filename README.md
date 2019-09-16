@@ -148,3 +148,5 @@ Result:
 
 
 
+- Use analyzer : https://github.com/chokolet/kor-nlp-lib/tree/no-nori
+- see more [plugin_note.md](./plugin_note)
