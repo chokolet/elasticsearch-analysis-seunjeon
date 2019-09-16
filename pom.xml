@@ -16,11 +16,11 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-<!--    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>-->
+    <!--    <parent>
+            <groupId>org.sonatype.oss</groupId>
+            <artifactId>oss-parent</artifactId>
+            <version>7</version>
+        </parent>-->
 
     <properties>
         <elasticsearch.version>7.1.1</elasticsearch.version>
@@ -28,13 +28,13 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
 
-<!--    <repositories>
-        <repository>
-            <id>sonatype</id>
-            <name>Sonatype Groups</name>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
-    </repositories>-->
+    <!--    <repositories>
+            <repository>
+                <id>sonatype</id>
+                <name>Sonatype Groups</name>
+                <url>https://oss.sonatype.org/content/groups/public/</url>
+            </repository>
+        </repositories>-->
 
     <dependencies>
 
@@ -68,6 +68,7 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- https://github.com/chokolet/kor-nlp-lib/tree/no-nori -->
         <dependency>
             <groupId>com.github.chokolet</groupId>
             <artifactId>kor-nlp-lib-exclude-nori</artifactId>

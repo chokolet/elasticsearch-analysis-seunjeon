@@ -44,6 +44,7 @@ public class MorphTokenizer extends Tokenizer {
         typeAttribute = addAttribute(TypeAttribute.class);
         // Offset  관련 속성
         offsetAttribute = addAttribute(OffsetAttribute.class);
+        // 텀위치 증가치
         posIncAtt = addAttribute(PositionIncrementAttribute.class);
         posLenAtt = addAttribute(PositionLengthAttribute.class);
 

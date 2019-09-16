@@ -1,8 +1,69 @@
 # plugin 정리
 
+
+
+## Analysis plugin 주요 소스
+
+```
+      "tokenizer": {
+        "lemma": {
+          "type": "MorphTokenizer",
+          "morphName": "SEUNJEON",
+          "tokenOption": "lemma"
+        },
+        "token": {
+          "type": "MorphTokenizer",
+          "morphName": "SEUNJEON",
+          "tokenOption": "token"
+        }
+```
+
+- plugin tokenizer name ( type ) : [source](https://github.com/chokolet/elasticsearch-analysis-seunjeon/blob/master/src/main/java/org/elasticsearch/plugins/analysis/MorphAnalysisPlugin.java#L20)
+
+- option ( morphName, tokenOption ) : [source](https://github.com/chokolet/elasticsearch-analysis-seunjeon/blob/master/src/main/java/org/elasticsearch/index/analysis/MorphTokenizerFactory.java#L27)
+
+- Initialize ( create method ) : [source](https://github.com/chokolet/elasticsearch-analysis-seunjeon/blob/master/src/main/java/org/elasticsearch/index/analysis/MorphTokenizerFactory.java#L43)
+
+- extend tokenizer class : [source](https://github.com/chokolet/elasticsearch-analysis-seunjeon/blob/master/src/main/java/org/apache/lucene/analysis/MorphTokenizer.java#L19)
+
+  - 주요 class
+
+    ```java
+    // 키워드 관련 속성
+    charTermAttribute = addAttribute(CharTermAttribute.class);
+    // 테그 관련 속성
+    typeAttribute = addAttribute(TypeAttribute.class);
+    // Offset  관련 속성
+    offsetAttribute = addAttribute(OffsetAttribute.class);
+    // 텀위치 증가치
+    posIncAtt = addAttribute(PositionIncrementAttribute.class);
+    ```
+
+  - 주요 method 
+
+    ```java
+    // factory patern & class reflection 
+    class initialize
+    // 하나씩 불러서 사용
+    public boolean incrementToken() 
+    // List 에 분석 결과 담기
+    public void reset()
+    //초기화
+    public void end()
+    ```
+
+  - 흐름 
+
+    - Initialize class -> reset method -> incrementToken -> end
+
 ## Plugin 추가 방법
 
 plugin 설치 전 필요 파일
+
+```bash
+elastic-morph-plugin-0.1.jar              plguin-security.policy
+kor-nlp-lib-1.0-jar-with-dependencies.jar plugin-descriptor.properties
+```
 
 > 1. elasticsearch - plugin package ( elastic-morph-plugin-0.1.jar )
 > 2. 보안 설정 ( plguin-security.policy )
@@ -98,4 +159,3 @@ __mecab - eunjeon elasticsearch 적용 방법 참고함__
 
 1. 이미 설치가 끝났고, 소스 추가 및 수정 시 ~/elasticsearch/plugin/[플로그인명]/ 안에 있는 jar 파일 및 기타 설정 파일을 변경해도 반영 된다.
 2. Elasticsearch 가 multi cluster 인 경우 전 서버에 다 반영해줘야 된다.
-3. 
