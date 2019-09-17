@@ -8,11 +8,10 @@ The Korean Analysis plugin integrates Lucene Korean analysis module into elastic
 create plugin zip file
 
 ```bash
-(base)  chokolet@icheol-uui-MacBookPro  ~/[path]/[to]/elasticsearch-7.3.1/zipfiles  ls -altr
+(base)  chokolet@icheol-uui-MacBookPro  ~/[path]/[to]/elasticsearch-7.3.1/zipfiles  ls
 total 48
--rw-r--r--@  1 chokolet  staff    231  9  9 00:15 plguin-security.policy
--rw-r--r--   1 chokolet  staff  13257  9  9 00:17 elastic-morph-plugin-0.1.jar
--rw-r--r--   1 chokolet  staff   1400  9  9 00:19 plugin-descriptor.properties
+elastic-morph-plugin-0.1.jar              plguin-security.policy
+kor-nlp-lib-1.0-jar-with-dependencies.jar plugin-descriptor.properties
 (base)  chokolet@icheol-uui-MacBookPro  ~/ck/elasticsearch/elasticsearch-7.3.1/zipfiles  zip elastic-morph-plugin-0.1.zip ./*
 ```
 
@@ -23,11 +22,8 @@ install plugin
 [=================================================] 100%
 -> Installed custom-morph
 
--rw-r--r--  1 chokolet  staff       231  9  9 00:08 plguin-security.policy
--rw-r--r--  1 chokolet  staff      1465  9  9 00:17 plugin-descriptor.properties
-drwxr-xr-x@ 3 chokolet  staff        96  9  9 00:19 ..
-drwxr-xr-x  6 chokolet  staff       192  9  9 00:39 .
--rw-r--r--  1 chokolet  staff     13259  9  9 00:52 elastic-morph-plugin-0.1.jar
+elastic-morph-plugin-0.1.jar              plguin-security.policy
+kor-nlp-lib-1.0-jar-with-dependencies.jar plugin-descriptor.properties
 
 ```
 
